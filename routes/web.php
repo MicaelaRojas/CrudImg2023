@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\ObraController;
 use App\Http\Controllers\FileUploadController;
 
 /*
@@ -19,11 +20,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::resource('/estudiantes', EstudianteController::class);
 
-    Route::get('/dashboard', function(){
+    Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::resource('/obras', ObraController::class);
 });
 
