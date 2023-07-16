@@ -21,6 +21,7 @@
                         <th class="border px-1 py-2  w-48">Titulo</th>
                         <th class="border px-1 py-2  w-48">Descripcion</th>
                         <th class="border px-1 py-2  w-48">Codigo</th>
+                        <th class="border px-1 py-2  w-48">Autor</th>
 
                         <th class="border px-4 py-2  w-min">Foto</th>
                         <th class="border px-4 py-2 w-96">ACCIONES</th>
@@ -30,10 +31,10 @@
                     @foreach ($obras as $obra)
                     <tr>
                         <td>{{$obra->id}}</td>
-                        <td>{{$obra->nombre}}</td>
+                        <td>{{$obra->titulo}}</td>
                         <td>{{$obra->descripcion}}</td>
                         <td>{{$obra->codigo}}</td>
-
+                        <td>{{ $obra->user->name }}</td>
                         <td  class="border px-14 py-1">
                             <img src="/imagen/{{$obra->imagen}}" width="60%">
                         </td>

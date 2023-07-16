@@ -37,24 +37,28 @@ class ObraController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'titulo' => 'required','descripcion' => 'required', 'codigo' => 'required', 'imagen' => 'required|image|mimes:jpeg,png,svg|max:1024'
+            'titulo' => 'required',
+            'descripcion' => 'required',
+            'codigo' => 'required',
+            'imagen' => 'required|image|mimes:jpeg,png,svg|max:1024'
         ]);
 
-         $obra = $request->all();
+        $obra = $request->all();
 
-         if($imagen = $request->file('imagen')) {
-            $response = cloudinary()->upload($request->file('imagen')->getRealPath())->getSecurePath();
-             $rutaGuardarImg = 'imagen/';
-             $imagenObra = date('YmdHis'). "." . $imagen->getClientOriginalExtension();
-             $imagen->move($rutaGuardarImg, $imagenObra,$response);
+        if ($imagen = $request->file('imagen')) {
+            $rutaGuardarImg = 'imagen/';
+            $imagenObra = date('YmdHis') . "." . $imagen->getClientOriginalExtension();
+            $imagen->move($rutaGuardarImg, $imagenObra);
+            $obra['imagen'] = $imagenObra;
+        }
 
-             $obra['imagen'] = "$imagenObra";
-         }
+        // Obtener el ID del usuario autenticado
+        $userID = auth()->id();
+        $obra['user_id'] = $userID;
 
-         Obra::create($obra);
+        Obra::create($obra);
 
-         return redirect()
-         ->route('obras.index');
+        return redirect()->route('obras.index');
     }
 
     /**
@@ -89,20 +93,23 @@ class ObraController extends Controller
     public function update(Request $request, Obra $obra)
     {
         $request->validate([
-            'titulo' => 'required','descripcion' => 'required', 'codigo' => 'required', 'imagen' => 'required|image|mimes:jpeg,png,svg|max:1024'
+            'titulo' => 'required',
+            'descripcion' => 'required',
+            'codigo' => 'required',
+            'imagen' => 'required|image|mimes:jpeg,png,svg|max:1024'
         ]);
 
-         $prod = $request->all();
-         if($imagen = $request->file('imagen')){
+        $prod = $request->all();
+        if ($imagen = $request->file('imagen')) {
             $rutaGuardarImg = 'imagen/';
             $imagenObra = date('YmdHis') . "." . $imagen->getClientOriginalExtension();
             $imagen->move($rutaGuardarImg, $imagenObra);
-            $prod['imagen'] = "$imagenObra";
-         }else{
+            $prod['imagen'] = $imagenObra;
+        } else {
             unset($prod['imagen']);
-         }
-         $obra->update($prod);
-         return redirect()->route('obras.index');
+        }
+        $obra->update($prod);
+        return redirect()->route('obras.index');
     }
 
     /**
