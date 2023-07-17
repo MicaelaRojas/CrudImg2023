@@ -91,26 +91,27 @@ class ObraController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Obra $obra)
-    {
-        $request->validate([
-            'titulo' => 'required',
-            'descripcion' => 'required',
-            'codigo' => 'required',
-            'imagen' => 'required|image|mimes:jpeg,png,svg|max:1024'
-        ]);
+{
+    $request->validate([
+        'titulo' => 'required',
+        'descripcion' => 'required',
+        'codigo' => 'required',
+        'imagen' => 'image|mimes:jpeg,png,svg|max:1024'
+    ]);
 
-        $prod = $request->all();
-        if ($imagen = $request->file('imagen')) {
-            $rutaGuardarImg = 'imagen/';
-            $imagenObra = date('YmdHis') . "." . $imagen->getClientOriginalExtension();
-            $imagen->move($rutaGuardarImg, $imagenObra);
-            $prod['imagen'] = $imagenObra;
-        } else {
-            unset($prod['imagen']);
-        }
-        $obra->update($prod);
-        return redirect()->route('obras.index');
+    $data = $request->all();
+
+    if ($request->hasFile('imagen')) {
+        $rutaGuardarImg = 'imagen/';
+        $imagenObra = date('YmdHis') . "." . $request->file('imagen')->getClientOriginalExtension();
+        $request->file('imagen')->move($rutaGuardarImg, $imagenObra);
+        $data['imagen'] = $imagenObra;
     }
+
+    $obra->update($data);
+
+    return redirect()->route('obras.index');
+}
 
     /**
      * Remove the specified resource from storage.
