@@ -20,6 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/imagen/{nombreImagen}', function ($nombreImagen) {
+    return response()->file(public_path('imagen/' . $nombreImagen));
+})->name('mostrar.imagen');
+
+
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::resource('/estudiantes', EstudianteController::class);
 

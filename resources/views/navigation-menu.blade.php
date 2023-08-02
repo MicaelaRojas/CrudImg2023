@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-custom-black">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -12,19 +12,19 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" class="text-white">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('estudiantes.index') }}" :active="request()->routeIs('estudiantes.index')">
+                    <x-jet-nav-link href="{{ route('estudiantes.index') }}" :active="request()->routeIs('estudiantes.index')" class="text-white">
                         {{ __('Estudiantes') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('obras.index') }}" :active="request()->routeIs('obras.index')">
-                        {{ __('obras') }}
+                    <x-jet-nav-link href="{{ route('obras.index') }}" :active="request()->routeIs('obras.index')" class="text-white">
+                        {{ __('Obras') }}
                     </x-jet-nav-link>
                 </div>
             </div>
 
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
+            <div class="hidden  sm:ml-6">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">

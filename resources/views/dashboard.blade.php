@@ -2,79 +2,291 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Galería Virtual de Arte Generativo') }}
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="css/animate.css">
+
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/style.css">
+
         </h2>
     </x-slot>
 
-    <!-- About Section -->
-    <section class="about-section text-center py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="text-white mb-4">Bienvenido a la Galería Virtual de Arte Generativo</h2>
-                    <p class="text-white-50">
-                        Explora obras de arte generativo creadas con Processing y p5.js. Sumérgete en la fusión de arte y tecnología y descubre las creaciones visuales únicas y fascinantes que se generan mediante algoritmos y procesos computacionales.
-                    </p>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <img class="img-fluid" src="template/student.png" alt="Galería de Arte Generativo" />
-                </div>
-            </div>
-        </div>
-    </section>
+	<div id="colorlib-page">
+						<div class="row d-flex no-gutters">
+							<div class="col-md-12 portfolio-wrap">
+								<div class="row no-gutters align-items-center">
+									<a href="imagen/work-1.jpg" class="col-md-6 img image-popup js-fullheight d-flex align-items-center justify-content-center" style="background-image: url(imagen/work-1.jpg);">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<span class="fa fa-expand"></span>
+										</div>
+									</a>
+									<div class="col-md-6">
+										<div class="text pt-5 pl-0 px-lg-5 pl-md-4 ftco-animate">
+											<div class="px-4 px-lg-4">
+												<div class="desc">
+													<div class="top">
+														<span class="subheading">Portrait</span>
+														<h2 class="mb-4"><a href="gallery.html">Black &amp; Gold Paint Face</a></h2>
+													</div>
+													<div class="absolute">
+														<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+													</div>
+													<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-    <!-- Projects Section -->
-    <section class="projects-section bg-light py-5">
-        <div class="container">
-            <!-- Featured Project Row -->
-            <div class="row align-items-center mb-4 mb-lg-5">
-                <div class="col-xl-8 col-lg-7">
-                    <img class="img-fluid mb-3 mb-lg-0" src="template/bg-masthead.jpg" alt="Featured Project" />
-                </div>
-                <div class="col-xl-4 col-lg-5">
-                    <div class="featured-text text-center text-lg-left">
-                        <h4>Explora las Obras de Arte</h4>
-                        <p class="text-black-50 mb-0">Sumérgete en un mundo de creatividad y tecnología con nuestras obras de arte generativo. Cada obra es una manifestación visual única que desafía los límites de la creatividad humana.</p>
-                    </div>
-                </div>
-            </div>
+							<div class="col-md-12 portfolio-wrap">
+								<div class="row no-gutters align-items-center">
+									<a href="{{ asset('imagen/work-2.jpg') }}"class="col-md-6 order-md-last img image-popup js-fullheight d-flex align-items-center justify-content-center" style="background-image: url(imagen/work-2.jpg);">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<span class="fa fa-expand"></span>
+										</div>
+									</a>
+									<div class="col-md-6">
+										<div class="text pt-5 px-md-5 ftco-animate">
+											<div class="px-4 px-lg-4">
+												<div class="desc text-md-right">
+													<div class="top">
+														<span class="subheading">Nature</span>
+														<h2 class="mb-4"><a href="gallery.html">Green Leaves</a></h2>
+													</div>
+													<div class="absolute">
+														<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+													</div>
+													<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-            <!-- Project One Row -->
-            <div class="row mb-5 mb-lg-0 justify-content-center">
-                <div class="col-lg-6">
-                    <img class="img-fluid" src="template/demo-image-01.jpg" alt="Project One" />
-                </div>
-                <div class="col-lg-6">
-                    <div class="bg-black text-center h-100 project">
-                        <div class="d-flex h-100">
-                            <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">Misión</h4>
-                                <p class="mb-0 text-white-50">Nuestra misión es fusionar el arte y la tecnología para crear obras visuales únicas y fascinantes. Buscamos desafiar los límites de la creatividad humana utilizando algoritmos y procesos computacionales para generar arte generativo innovador.</p>
-                                <hr class="d-none d-lg-block mb-0 ms-0" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+							<div class="col-md-12 portfolio-wrap">
+								<div class="row no-gutters align-items-center">
+									<a href="imagen/work-3.jpg" class="col-md-6 img image-popup js-fullheight d-flex align-items-center justify-content-center" style="background-image: url(imagen/work-3.jpg);">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<span class="fa fa-expand"></span>
+										</div>
+									</a>
+									<div class="col-md-6">
+										<div class="text pt-5 pl-0 px-lg-5 pl-md-4 ftco-animate">
+											<div class="px-4 px-lg-4">
+												<div class="desc">
+													<div class="top">
+														<span class="subheading">Nature</span>
+														<h2 class="mb-4"><a href="gallery.html">Coal</a></h2>
+													</div>
+													<div class="absolute">
+														<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+													</div>
+													<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-            <!-- Project Two Row -->
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <img class="img-fluid" src="template/demo-image-02.jpg" alt="Project Two" />
-                </div>
-                <div class="col-lg-6 order-lg-first">
-                    <div class="bg-black text-center h-100 project">
-                        <div class="d-flex h-100">
-                            <div class="project-text w-100 my-auto text-center text-lg-right">
-                                <h4 class="text-white">Visión</h4>
-                                <p class="mb-0 text-white-50">Nuestra visión es establecer un espacio en línea donde los artistas generativos puedan compartir y exhibir su trabajo al mundo. Queremos fomentar la apreciación del arte generativo y mostrar cómo la tecnología puede ampliar los límites de la creatividad artística.</p>
-                                <hr class="d-none d-lg-block mb-0 me-0" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+							<div class="col-md-12 portfolio-wrap">
+								<div class="row no-gutters align-items-center">
+									<a href="imagen/work-4.jpg" class="col-md-6 order-md-last img image-popup js-fullheight d-flex align-items-center justify-content-center" style="background-image: url(imagen/work-4.jpg);">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<span class="fa fa-expand"></span>
+										</div>
+									</a>
+									<div class="col-md-6">
+										<div class="text pt-5 px-md-5 ftco-animate">
+											<div class="px-4 px-lg-4">
+												<div class="desc text-md-right">
+													<div class="top">
+														<span class="subheading">Nature</span>
+														<h2 class="mb-4"><a href="gallery.html">Top Leaf</a></h2>
+													</div>
+													<div class="absolute">
+														<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+													</div>
+													<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-12 portfolio-wrap">
+								<div class="row no-gutters align-items-center">
+									<a href="imagen/work-5.jpg" class="col-md-6 img image-popup js-fullheight d-flex align-items-center justify-content-center" style="background-image: url(imagen/work-5.jpg);">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<span class="fa fa-expand"></span>
+										</div>
+									</a>
+									<div class="col-md-6">
+										<div class="text pt-5 pl-0 px-lg-5 pl-md-4 ftco-animate">
+											<div class="px-4 px-lg-4">
+												<div class="desc">
+													<div class="top">
+														<span class="subheading">Portrait</span>
+														<h2 class="mb-4"><a href="gallery.html">Building</a></h2>
+													</div>
+													<div class="absolute">
+														<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+													</div>
+													<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-12 portfolio-wrap">
+								<div class="row no-gutters align-items-center">
+									<a href="imagen/work-6.jpg" class="col-md-6 order-md-last img image-popup js-fullheight d-flex align-items-center justify-content-center" style="background-image: url(imagen/work-6.jpg);">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<span class="fa fa-expand"></span>
+										</div>
+									</a>
+									<div class="col-md-6">
+										<div class="text pt-5 px-md-5 ftco-animate">
+											<div class="px-4 px-lg-4">
+												<div class="desc text-md-right">
+													<div class="top">
+														<span class="subheading">Fashion</span>
+														<h2 class="mb-4"><a href="gallery.html">Black Girl Model</a></h2>
+													</div>
+													<div class="absolute">
+														<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+													</div>
+													<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-12 portfolio-wrap">
+								<div class="row no-gutters align-items-center">
+									<a href="imagen/work-7.jpg" class="col-md-6 img image-popup js-fullheight d-flex align-items-center justify-content-center" style="background-image: url(imagen/work-7.jpg);">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<span class="fa fa-expand"></span>
+										</div>
+									</a>
+									<div class="col-md-6">
+										<div class="text pt-5 pl-0 px-lg-5 pl-md-4 ftco-animate">
+											<div class="px-4 px-lg-4">
+												<div class="desc">
+													<div class="top">
+														<span class="subheading">Animals</span>
+														<h2 class="mb-4"><a href="gallery.html">Pug Puppy</a></h2>
+													</div>
+													<div class="absolute">
+														<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+													</div>
+													<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-12 portfolio-wrap">
+								<div class="row no-gutters align-items-center">
+									<a href="imagen/work-8.jpg" class="col-md-6 order-md-last img image-popup js-fullheight d-flex align-items-center justify-content-center" style="background-image: url(imagen/work-8.jpg);">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<span class="fa fa-expand"></span>
+										</div>
+									</a>
+									<div class="col-md-6">
+										<div class="text pt-5 px-md-5 ftco-animate">
+											<div class="px-4 px-lg-4">
+												<div class="desc text-md-right">
+													<div class="top">
+														<span class="subheading">Nature</span>
+														<h2 class="mb-4"><a href="gallery.html">White Flower</a></h2>
+													</div>
+													<div class="absolute">
+														<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+													</div>
+													<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-12 portfolio-wrap">
+								<div class="row no-gutters align-items-center">
+									<a href="imagen/work-9.jpg" class="col-md-6 img js-fullheight d-flex align-items-center justify-content-center" style="background-image: url(imagen/work-9.jpg);">
+										<div class="icon d-flex align-items-center justify-content-center">
+											<span class="fa fa-expand"></span>
+										</div>
+									</a>
+									<div class="col-md-6">
+										<div class="text pt-5 pl-0 px-lg-5 pl-md-4 ftco-animate">
+											<div class="px-4 px-lg-4">
+												<div class="desc">
+													<div class="top">
+														<span class="subheading">Animals</span>
+														<h2 class="mb-4"><a href="gallery.html">Turtle</a></h2>
+													</div>
+													<div class="absolute">
+														<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+													</div>
+													<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row d-flex">
+							<div class="col-md-12">
+								<a href="#" class="btn-custom-load d-block w-100 text-center py-4">Load more <span class="fa fa-refresh"></span></a>
+							</div>
+						</div>
+
+			</div><!-- END COLORLIB-MAIN -->
+		</div><!-- END COLORLIB-PAGE -->
+
+		<!-- loader -->
+		<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
+		<script src="js/jquery.stellar.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/jquery.animateNumber.min.js"></script>
+		<script src="js/scrollax.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+		<script src="js/google-map.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
+
 </x-app-layout>

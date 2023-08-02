@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Mostudio - Free Bootstrap 4 Template by Colorlib</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="css/animate.css">
+
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -5,81 +27,75 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
-                    <div class="mt-8 text-2xl">
-                        Lista de Obras
-                    </div>
-                    <div class="mt-6 text-gray-500">
-                        <a href="{{ route('obras.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Agregar Obra</a>
-                    </div>
-                </div>
+    <div class=" bg-custom-black overflow-hidden shadow-xl sm:rounded-lg">
 
-                <div class="p-6 sm:px-20 bg-white">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                        @foreach($obras as $obra)
-                        <div class="bg-gray-100 border border-gray-300 p-4 rounded-md">
-                            <h3 class="font-bold text-xl mb-2">{{ $obra->titulo }}</h3>
-                            <p class="text-gray-700">{{ $obra->descripcion }}</p>
-                            <img src="/imagen/{{ $obra->imagen }}" alt="{{ $obra->titulo }}" class="mt-4 mx-auto">
-                            <div class="mt-4 flex items-center justify-between">
-                                <a href="{{ route('obras.edit', $obra->id) }}" class="text-blue-500 hover:text-blue-700">Editar</a>
+
+                    <div class="mt-6 text-gray-500">
+                        <a href="{{ route('obras.create') }}" class="btn btn-outline-warning btn-lg">Agregar Obra</a>
+                    </div><br>
+
+
+<!-- primera parte -->
+
+<div id="colorlib-page">
+		<div class="row d-flex no-gutters">
+			<div class="col-md-12 portfolio-wrap">
+			</div>
+
+                <div class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 portfolio-wrap-2">
+
+                @foreach($obras as $obra)
+
+									<div href="#" class="img w-100 js-fullheight d-flex align-items-center" style="background-image: url(/imagen/{{ $obra->imagen }});">
+										<div class="text p-4 p-md-5 ftco-animate">
+											<div class="desc">
+												<div class="top">
+                                                <h2 class="mb-4">{{ $obra->titulo }}</h2>
+                                                <span class="subheading">{{ $obra->descripcion }}</span>
+                                                <span class="subheading">{{ $obra->codigo }}</span>
+                                                <span class="subheading">Autor: {{ $obra->user->name }}</span>
+                                                    <br>
+
+
                                 <form action="{{ route('obras.destroy', $obra->id) }}" method="POST" class="inline formEliminar">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="text-red-500 hover:text-red-700">Eliminar</button>
+                                   <button type="submit" class="btn btn-outline-warning" >Eliminar</button>
+                                    <a href="{{ route('obras.edit', $obra->id) }}" class="btn btn-outline-info"  style="margin:0.2rem" >Editar</a>
                                 </form>
-                                <button type="button" class="text-blue-500 hover:text-blue-700 ver-codigo-btn" data-bs-toggle="modal" data-bs-target="#codigoModal{{ $obra->id }}" data-codigo="{{ $obra->codigo }}">Ver Código</button>
-                            </div>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="codigoModal{{ $obra->id }}" tabindex="-1" aria-labelledby="codigoModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="codigoModalLabel">Código de la Obra</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <pre id="codigoObra{{ $obra->id }}"></pre>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+                 @endforeach
+                 </div>
+                 </div>
+
+
+					</div>
+				</section>
+			</div><!-- END COLORLIB-MAIN -->
+		</div><!-- END COLORLIB-PAGE -->
+
+
+
+
+
 </x-app-layout>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    function mostrarCodigo(codigo) {
-        const codigoObra = document.getElementById('codigoObra');
-        codigoObra.textContent = codigo;
-        $('#codigoModal').modal('show');
-    }
-
-    $(document).ready(function () {
-        // Evento click del botón "Ver Código"
-        $('.ver-codigo-btn').click(function () {
-            const codigo = $(this).data('codigo');
-            mostrarCodigo(codigo);
-        });
-
-        // Evento submit del formulario de eliminación
-        $('.formEliminar').submit(function (event) {
-            event.preventDefault();
-            event.stopPropagation();
-            Swal.fire({
+    (function () {
+  'use strict'
+  //debemos crear la clase formEliminar dentro del form del boton borrar
+  //recordar que cada registro a eliminar esta contenido en un form
+  var forms = document.querySelectorAll('.formEliminar')
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+          event.preventDefault()
+          event.stopPropagation()
+          Swal.fire({
                 title: '¿Confirma la eliminación del registro?',
                 icon: 'info',
                 showCancelButton: true,
@@ -89,9 +105,26 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     this.submit();
-                    Swal.fire('¡Eliminado!', 'El registro ha sido eliminado exitosamente.', 'success');
+                    Swal.fire('¡Eliminado!', 'El registro ha sido eliminado exitosamente.','success');
                 }
-            });
-        });
-    });
+            })
+      }, false)
+    })
+})()
 </script>
+        <script src="js/jquery.min.js"></script>
+		<script src="js/jquery-migrate-3.0.1.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
+		<script src="js/jquery.stellar.min.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/jquery.animateNumber.min.js"></script>
+		<script src="js/scrollax.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+		<script src="js/google-map.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
