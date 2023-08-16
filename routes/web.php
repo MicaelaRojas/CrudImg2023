@@ -25,6 +25,8 @@ Route::get('/imagen/{nombreImagen}', function ($nombreImagen) {
 })->name('mostrar.imagen');
 
 
+
+
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::resource('/estudiantes', EstudianteController::class);
 

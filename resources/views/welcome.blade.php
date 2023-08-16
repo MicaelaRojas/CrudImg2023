@@ -47,7 +47,7 @@
                         @if (Route::has('login'))
                         <div >
                             @auth
-                                <a href="{{ url('/estudiantes') }}" class="text-bg text-gray-700 ">Dashboard</a>
+                                <a href="{{ url('/obras') }}" class="text-bg text-gray-700 ">Dashboard</a>
                             @else
                                 <a href="{{ route('login') }}" class="text-bg text-gray-700">Log in</a>
 
@@ -68,7 +68,7 @@
                     <div class="text-center">
                         <h1 class="mx-auto my-0 text-uppercase">Registro de Estudiantes</h1>
                         <h2 class="text-white-50 mx-auto mt-2 mb-5">Página de registro de estudiantes para la práctica 3 de Desarrollo Soluciones Nube </h2>
-                        <a class="btn btn-primary" href="{{ url('/estudiantes') }}" >Get Started</a>
+                        <a class="btn btn-primary" href="{{ url('/obras') }}" >Get Started</a>
                     </div>
                 </div>
             </div>

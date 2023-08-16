@@ -51,6 +51,39 @@
 								</div>
 							</div>
 
+                            <script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      apiUrl: 'https://localhost:7249/api/users', // Coloca aquí la URL base de tu API .NET Core
+      users: [] // Aquí almacenaremos los datos de los usuarios obtenidos de la API
+    };
+  },
+  mounted() {
+    // Realizar la solicitud GET al montar el componente
+    this.fetchUsers();
+  },
+  methods: {
+    fetchUsers() {
+      axios.get(${this.apiUrl}/users)
+        .then(response => {
+          // Obtener los datos de la respuesta
+          this.users = response.data;
+
+          // Hacer algo con los datos obtenidos
+          // ...
+        })
+        .catch(error => {
+          // Manejar errores de la solicitud
+          console.error(error);
+        });
+    }
+  }
+};
+</script>
+
 							<div class="col-md-12 portfolio-wrap">
 								<div class="row no-gutters align-items-center">
 									<a href="{{ asset('imagen/work-2.jpg') }}"class="col-md-6 order-md-last img image-popup js-fullheight d-flex align-items-center justify-content-center" style="background-image: url(imagen/work-2.jpg);">
@@ -286,6 +319,7 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 		<script src="js/google-map.js"></script>
 		<script src="js/main.js"></script>
+
 
 	</body>
 
